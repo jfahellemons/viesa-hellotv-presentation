@@ -5,14 +5,14 @@ export default function IntroSlide() {
   return (
     <div className="flex flex-col items-center justify-center h-full text-center px-8 py-12">
       <div className="max-w-2xl mx-auto flex flex-col items-center gap-8">
-        {/* Logo */}
-        <div className="relative">
+        {/* Partnership lockup */}
+        <div className="relative w-full max-w-md">
           <Image
-            src="/viesa-logo.png"
-            alt="VIESA Automations"
-            width={100}
-            height={100}
-            className="rounded-2xl shadow-xl"
+            src="/viesa-hellotv-lockup.png"
+            alt="Viesa Automations x Hello TV"
+            width={640}
+            height={200}
+            className="w-full h-auto object-contain"
             priority
           />
         </div>
