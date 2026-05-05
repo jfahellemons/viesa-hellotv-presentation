@@ -58,7 +58,7 @@ export default function Sidebar({
               <p className="text-sidebar-foreground font-semibold text-sm leading-tight">
                 VIESA
               </p>
-              <p className="text-sidebar-foreground/60 text-xs leading-tight">
+              <p className="text-sidebar-foreground/90 text-xs leading-tight">
                 Automations
               </p>
             </div>
@@ -92,7 +92,7 @@ export default function Sidebar({
                       'w-full flex items-center gap-3 rounded-lg px-3 py-3 text-left transition-all duration-200',
                       isActive
                         ? 'bg-sidebar-accent text-sidebar-accent-foreground'
-                        : 'text-sidebar-foreground/70 hover:bg-sidebar-accent/50 hover:text-sidebar-foreground',
+                        : 'text-sidebar-foreground hover:bg-sidebar-accent/50 hover:text-sidebar-foreground',
                     ].join(' ')}
                   >
                     {/* Slide number badge */}
@@ -101,7 +101,7 @@ export default function Sidebar({
                         'flex h-7 w-7 shrink-0 items-center justify-center rounded-md text-xs font-bold transition-colors',
                         isActive
                           ? 'bg-primary text-primary-foreground'
-                          : 'bg-sidebar-border/60 text-sidebar-foreground/50',
+                          : 'bg-sidebar-border text-sidebar-foreground/90',
                       ].join(' ')}
                     >
                       {slide.id}
@@ -114,8 +114,8 @@ export default function Sidebar({
                         className={[
                           'text-xs leading-tight truncate mt-0.5',
                           isActive
-                            ? 'text-sidebar-accent-foreground/70'
-                            : 'text-sidebar-foreground/40',
+                            ? 'text-sidebar-accent-foreground/80'
+                            : 'text-sidebar-foreground/70',
                         ].join(' ')}
                       >
                         {slide.sublabel}
