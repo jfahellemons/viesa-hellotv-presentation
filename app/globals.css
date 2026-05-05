@@ -4,39 +4,47 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
+  /* Viesa brand: deep teal primary, clean off-white background, neutral grays */
+  --background: oklch(0.975 0.004 220);
+  --foreground: oklch(0.13 0.015 220);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
+  --card-foreground: oklch(0.13 0.015 220);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.13 0.015 220);
+  /* Primary: #1B435D deep teal */
+  --primary: oklch(0.34 0.065 220);
   --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.93 0.008 220);
+  --secondary-foreground: oklch(0.34 0.065 220);
+  --muted: oklch(0.94 0.006 220);
+  --muted-foreground: oklch(0.52 0.02 220);
+  --accent: oklch(0.92 0.012 220);
+  --accent-foreground: oklch(0.34 0.065 220);
   --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
+  --destructive-foreground: oklch(0.985 0 0);
+  --border: oklch(0.88 0.008 220);
+  --input: oklch(0.88 0.008 220);
+  --ring: oklch(0.34 0.065 220);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
   --chart-4: oklch(0.828 0.189 84.429);
   --chart-5: oklch(0.769 0.188 70.08);
-  --radius: 0.625rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  --radius: 0.75rem;
+  /* Sidebar: dark teal panel */
+  --sidebar: oklch(0.25 0.055 220);
+  --sidebar-foreground: oklch(0.92 0.01 220);
+  --sidebar-primary: oklch(0.985 0 0);
+  --sidebar-primary-foreground: oklch(0.25 0.055 220);
+  --sidebar-accent: oklch(0.32 0.065 220);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.32 0.055 220);
+  --sidebar-ring: oklch(0.55 0.04 220);
+  /* Custom Viesa tokens */
+  --viesa-teal: oklch(0.34 0.065 220);
+  --viesa-teal-dark: oklch(0.25 0.055 220);
+  --viesa-teal-light: oklch(0.46 0.075 210);
+  --viesa-surface: oklch(0.975 0.004 220);
 }
 
 .dark {
@@ -113,6 +121,10 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+  --color-viesa-teal: var(--viesa-teal);
+  --color-viesa-teal-dark: var(--viesa-teal-dark);
+  --color-viesa-teal-light: var(--viesa-teal-light);
+  --color-viesa-surface: var(--viesa-surface);
 }
 
 @layer base {
