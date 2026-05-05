@@ -19,9 +19,6 @@ export default function IntroSlide() {
 
         {/* Headline */}
         <div className="flex flex-col gap-3">
-          <h1 className="text-5xl font-bold text-foreground tracking-tight text-balance">
-            VIESA Automations
-          </h1>
           <p className="text-xl text-muted-foreground font-medium text-balance leading-relaxed">
             Slimme automatisering voor HelloTV
           </p>
