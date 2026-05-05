@@ -39,7 +39,7 @@ export default function IntroSlide() {
         {/* Pill badge */}
         <div className="flex items-center gap-2 bg-primary/10 text-primary rounded-full px-4 py-2 text-sm font-medium">
           <Zap size={14} />
-          <span>Sales Pitch Presentatie — 2025</span>
+          <span>Presentatie Hello TV — 2026-05-07</span>
         </div>
       </div>
     </div>
