@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import { AlertTriangle, Clock, FileSpreadsheet, TrendingDown } from 'lucide-react'
+import { useLightbox } from '@/components/LightboxProvider'
 
 const painPoints = [
     {
@@ -20,6 +21,8 @@ const painPoints = [
 ]
 
 export default function ProbleemSlide() {
+    const { openLightbox } = useLightbox()
+
     return (
         <div className="flex flex-col h-full px-8 py-10 gap-8 max-w-5xl mx-auto w-full">
             {/* Header */}
@@ -69,23 +72,29 @@ export default function ProbleemSlide() {
 
             {/* Images section */}
             <div className="flex gap-4 mt-auto h-150 w-full">
-                <div className="relative h-full aspect-[9/16] rounded-xl overflow-hidden border border-border shadow-md bg-muted">
+                <div 
+                    className="relative h-full aspect-[9/16] rounded-xl overflow-hidden border border-border shadow-md bg-muted cursor-zoom-in group/img"
+                    onClick={() => openLightbox('/problem-bookmarks.jpg', 'Handmatige bookmarks')}
+                >
                     <Image
                         src="/problem-bookmarks.jpg"
                         alt="Handmatige bookmarks"
                         fill
-                        className="object-cover object-top"
+                        className="object-cover object-top transition-transform duration-500 group-hover/img:scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-3">
                         <span className="text-[10px] text-white font-medium uppercase tracking-wider">Handmatige tools</span>
                     </div>
                 </div>
-                <div className="relative h-full flex-1 rounded-xl overflow-hidden border border-border shadow-md bg-muted">
+                <div 
+                    className="relative h-full flex-1 rounded-xl overflow-hidden border border-border shadow-md bg-muted cursor-zoom-in group/img"
+                    onClick={() => openLightbox('/problem-dashboard.jpg', 'Huidige systemen')}
+                >
                     <Image
                         src="/problem-dashboard.jpg"
                         alt="Verouderd dashboard"
                         fill
-                        className="object-cover"
+                        className="object-cover transition-transform duration-500 group-hover/img:scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-3">
                         <span className="text-[10px] text-white font-medium uppercase tracking-wider">Huidige systemen</span>

@@ -9,6 +9,7 @@ import {
   MessageSquare, 
   Play 
 } from 'lucide-react'
+import { useLightbox } from '@/components/LightboxProvider'
 
 const features = [
   {
@@ -44,6 +45,8 @@ const features = [
 ]
 
 export default function OplossingsSlide() {
+  const { openLightbox } = useLightbox()
+
   return (
     <div className="flex flex-col h-full px-8 py-10 gap-8 max-w-5xl mx-auto w-full">
       {/* Header */}
@@ -96,14 +99,17 @@ export default function OplossingsSlide() {
 
         {/* Dashboard Preview & Demo Link */}
         <div className="flex flex-col gap-4">
-          <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden border border-border shadow-2xl bg-muted group">
+          <div 
+            className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden border border-border shadow-2xl bg-muted group/img cursor-zoom-in"
+            onClick={() => openLightbox('/dashboard.png', 'Prototype Dashboard')}
+          >
             <Image
               src="/dashboard.png"
               alt="Prototype Dashboard"
               fill
-              className="object-cover"
+              className="object-cover transition-transform duration-500 group-hover/img:scale-105"
             />
-            <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
+            <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover/img:opacity-100 transition-opacity pointer-events-none" />
           </div>
 
           {/* Live Demo Link */}

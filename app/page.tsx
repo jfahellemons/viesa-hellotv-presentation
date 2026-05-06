@@ -9,6 +9,7 @@ import SlideContent from '@/components/SlideContent'
 
 import IntroSlide from '@/components/slides/IntroSlide'
 import AboutSlide from '@/components/slides/AboutSlide'
+import LightboxProvider from '@/components/LightboxProvider'
 import ProbleemSlide from '@/components/slides/ProbleemSlide'
 import OplossingsSlide from '@/components/slides/OplossingsSlide'
 import TechniekSlide from '@/components/slides/TechniekSlide'
@@ -71,108 +72,110 @@ export default function PresentationPage() {
   const isLast = currentSlide === SLIDES.length - 1
 
   return (
-    <PresentationLayout
-      sidebar={
-        <Sidebar
-          slides={SLIDES}
-          currentSlide={currentSlide}
-          onSlideChange={goToSlide}
-          mobileOpen={mobileMenuOpen}
-          onMobileClose={() => setMobileMenuOpen(false)}
-        />
-      }
-    >
-      {/* Top bar */}
-      <header className="flex items-center justify-between px-6 py-4 border-b border-border bg-card shrink-0">
-        {/* Mobile hamburger */}
-        <button
-          onClick={() => setMobileMenuOpen(true)}
-          className="md:hidden flex items-center justify-center h-9 w-9 rounded-lg border border-border bg-background text-foreground hover:bg-muted transition-colors"
-          aria-label="Open navigatie"
-        >
-          <Menu size={18} />
-        </button>
-
-        {/* Slide title */}
-        <div className="hidden md:flex items-center gap-2 min-w-0">
-          <span className="text-xs font-semibold text-muted-foreground uppercase tracking-widest">
-            Slide {currentSlide + 1} / {SLIDES.length}
-          </span>
-          <span className="text-muted-foreground/40 text-xs">—</span>
-          <span className="text-sm font-semibold text-foreground truncate">
-            {SLIDES[currentSlide].label}
-          </span>
-        </div>
-
-        {/* Mobile: slide counter only */}
-        <div className="md:hidden flex items-center gap-1">
-          <span className="text-xs font-semibold text-muted-foreground">
-            {currentSlide + 1} / {SLIDES.length}
-          </span>
-        </div>
-
-        {/* Progress dots */}
-        <div className="flex items-center gap-1.5" role="tablist" aria-label="Slide voortgang">
-          {SLIDES.map((_, i) => (
-            <button
-              key={i}
-              role="tab"
-              aria-selected={i === currentSlide}
-              aria-label={`Ga naar slide ${i + 1}`}
-              onClick={() => goToSlide(i)}
-              className={[
-                'rounded-full transition-all duration-200',
-                i === currentSlide
-                  ? 'w-5 h-2 bg-primary'
-                  : 'w-2 h-2 bg-border hover:bg-primary/40',
-              ].join(' ')}
-            />
-          ))}
-        </div>
-      </header>
-
-      {/* Slide area */}
-      <SlideContent slideKey={currentSlide}>
-        {SLIDE_COMPONENTS[currentSlide]}
-      </SlideContent>
-
-      {/* Navigation footer */}
-      <footer className="flex items-center justify-between px-6 py-4 border-t border-border bg-card shrink-0">
-        <button
-          onClick={() => goToSlide(currentSlide - 1)}
-          disabled={isFirst}
-          className={[
-            'flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium transition-all',
-            isFirst
-              ? 'text-muted-foreground/40 cursor-not-allowed'
-              : 'text-foreground bg-background border border-border hover:bg-muted hover:shadow-sm',
-          ].join(' ')}
-          aria-label="Vorige slide"
-        >
-          <ChevronLeft size={16} />
-          <span className="hidden sm:inline">Vorige</span>
-        </button>
-
-        {/* Slide label */}
-        <p className="text-sm text-muted-foreground font-medium hidden sm:block">
-          {SLIDES[currentSlide].sublabel}
-        </p>
-
-        <button
-          onClick={() => goToSlide(currentSlide + 1)}
-          disabled={isLast}
-          className={[
-            'flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium transition-all',
-            isLast
-              ? 'text-muted-foreground/40 cursor-not-allowed'
-              : 'bg-primary text-primary-foreground hover:opacity-90 shadow-sm',
-          ].join(' ')}
-          aria-label="Volgende slide"
-        >
-          <span className="hidden sm:inline">Volgende</span>
-          <ChevronRight size={16} />
-        </button>
-      </footer>
-    </PresentationLayout>
+    <LightboxProvider>
+      <PresentationLayout
+        sidebar={
+          <Sidebar
+            slides={SLIDES}
+            currentSlide={currentSlide}
+            onSlideChange={goToSlide}
+            mobileOpen={mobileMenuOpen}
+            onMobileClose={() => setMobileMenuOpen(false)}
+          />
+        }
+      >
+        {/* Top bar */}
+        <header className="flex items-center justify-between px-6 py-4 border-b border-border bg-card shrink-0">
+          {/* Mobile hamburger */}
+          <button
+            onClick={() => setMobileMenuOpen(true)}
+            className="md:hidden flex items-center justify-center h-9 w-9 rounded-lg border border-border bg-background text-foreground hover:bg-muted transition-colors"
+            aria-label="Open navigatie"
+          >
+            <Menu size={18} />
+          </button>
+  
+          {/* Slide title */}
+          <div className="hidden md:flex items-center gap-2 min-w-0">
+            <span className="text-xs font-semibold text-muted-foreground uppercase tracking-widest">
+              Slide {currentSlide + 1} / {SLIDES.length}
+            </span>
+            <span className="text-muted-foreground/40 text-xs">—</span>
+            <span className="text-sm font-semibold text-foreground truncate">
+              {SLIDES[currentSlide].label}
+            </span>
+          </div>
+  
+          {/* Mobile: slide counter only */}
+          <div className="md:hidden flex items-center gap-1">
+            <span className="text-xs font-semibold text-muted-foreground">
+              {currentSlide + 1} / {SLIDES.length}
+            </span>
+          </div>
+  
+          {/* Progress dots */}
+          <div className="flex items-center gap-1.5" role="tablist" aria-label="Slide voortgang">
+            {SLIDES.map((_, i) => (
+              <button
+                key={i}
+                role="tab"
+                aria-selected={i === currentSlide}
+                aria-label={`Ga naar slide ${i + 1}`}
+                onClick={() => goToSlide(i)}
+                className={[
+                  'rounded-full transition-all duration-200',
+                  i === currentSlide
+                    ? 'w-5 h-2 bg-primary'
+                    : 'w-2 h-2 bg-border hover:bg-primary/40',
+                ].join(' ')}
+              />
+            ))}
+          </div>
+        </header>
+  
+        {/* Slide area */}
+        <SlideContent slideKey={currentSlide}>
+          {SLIDE_COMPONENTS[currentSlide]}
+        </SlideContent>
+  
+        {/* Navigation footer */}
+        <footer className="flex items-center justify-between px-6 py-4 border-t border-border bg-card shrink-0">
+          <button
+            onClick={() => goToSlide(currentSlide - 1)}
+            disabled={isFirst}
+            className={[
+              'flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium transition-all',
+              isFirst
+                ? 'text-muted-foreground/40 cursor-not-allowed'
+                : 'text-foreground bg-background border border-border hover:bg-muted hover:shadow-sm',
+            ].join(' ')}
+            aria-label="Vorige slide"
+          >
+            <ChevronLeft size={16} />
+            <span className="hidden sm:inline">Vorige</span>
+          </button>
+  
+          {/* Slide label */}
+          <p className="text-sm text-muted-foreground font-medium hidden sm:block">
+            {SLIDES[currentSlide].sublabel}
+          </p>
+  
+          <button
+            onClick={() => goToSlide(currentSlide + 1)}
+            disabled={isLast}
+            className={[
+              'flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium transition-all',
+              isLast
+                ? 'text-muted-foreground/40 cursor-not-allowed'
+                : 'bg-primary text-primary-foreground hover:opacity-90 shadow-sm',
+            ].join(' ')}
+            aria-label="Volgende slide"
+          >
+            <span className="hidden sm:inline">Volgende</span>
+            <ChevronRight size={16} />
+          </button>
+        </footer>
+      </PresentationLayout>
+    </LightboxProvider>
   )
 }
