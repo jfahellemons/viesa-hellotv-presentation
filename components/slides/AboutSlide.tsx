@@ -10,7 +10,7 @@ const people = [
         icon: Award,
         points: [
           'Ruim 10 jaar ervaring als developer',
-          'Grootschalige, complexe projecten geleid voor Achmea, de Nationale Politie en Coop supermarkten',
+          'Grootschalige, complexe projecten geleid voor Achmea, Wehkamp, Nationale Politie en Coop supermarkten',
         ],
       },
       {
