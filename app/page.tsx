@@ -8,8 +8,10 @@ import Sidebar, { SlideItem } from '@/components/Sidebar'
 import SlideContent from '@/components/SlideContent'
 
 import IntroSlide from '@/components/slides/IntroSlide'
+import AboutSlide from '@/components/slides/AboutSlide'
 import ProbleemSlide from '@/components/slides/ProbleemSlide'
 import OplossingsSlide from '@/components/slides/OplossingsSlide'
+import TechniekSlide from '@/components/slides/TechniekSlide'
 import WinstSlide from '@/components/slides/WinstSlide'
 import AfhankelijkhedenSlide from '@/components/slides/AfhankelijkhedenSlide'
 import RoadmapSlide from '@/components/slides/RoadmapSlide'
@@ -17,22 +19,26 @@ import AanbodSlide from '@/components/slides/AanbodSlide'
 
 const SLIDES: SlideItem[] = [
   { id: 1, label: 'Introductie', sublabel: 'VIESA Automations' },
-  { id: 2, label: 'Probleem', sublabel: 'Huidige situatie' },
-  { id: 3, label: 'Oplossing', sublabel: 'Ons prototype' },
-  { id: 4, label: 'Winst & ROI', sublabel: 'Wat levert het op' },
-  { id: 5, label: 'Afhankelijkheden', sublabel: 'Wat we nodig hebben' },
-  { id: 6, label: 'Roadmap', sublabel: 'Planning per fase' },
-  { id: 7, label: 'Ons Aanbod', sublabel: 'Investering & onderhoud' },
+  { id: 2, label: 'Over ons', sublabel: 'Het team' },
+  { id: 3, label: 'Probleem', sublabel: 'Huidige situatie' },
+  { id: 4, label: 'Oplossing', sublabel: 'Ons prototype' },
+  { id: 5, label: 'Techniek', sublabel: 'Architectuur' },
+  { id: 6, label: 'Winst & ROI', sublabel: 'Wat levert het op' },
+  { id: 7, label: 'Afhankelijkheden', sublabel: 'Wat we nodig hebben' },
+  { id: 8, label: 'Roadmap', sublabel: 'Planning per fase' },
+  { id: 9, label: 'Ons Aanbod', sublabel: 'Investering & onderhoud' },
 ]
 
 const SLIDE_COMPONENTS = [
   <IntroSlide key={0} />,
-  <ProbleemSlide key={1} />,
-  <OplossingsSlide key={2} />,
-  <WinstSlide key={3} />,
-  <AfhankelijkhedenSlide key={4} />,
-  <RoadmapSlide key={5} />,
-  <AanbodSlide key={6} />,
+  <AboutSlide key={1} />,
+  <ProbleemSlide key={2} />,
+  <OplossingsSlide key={3} />,
+  <TechniekSlide key={4} />,
+  <WinstSlide key={5} />,
+  <AfhankelijkhedenSlide key={6} />,
+  <RoadmapSlide key={7} />,
+  <AanbodSlide key={8} />,
 ]
 
 export default function PresentationPage() {
