@@ -15,7 +15,8 @@ import TechniekSlide from '@/components/slides/TechniekSlide'
 import WinstSlide from '@/components/slides/WinstSlide'
 import AfhankelijkhedenSlide from '@/components/slides/AfhankelijkhedenSlide'
 import RoadmapSlide from '@/components/slides/RoadmapSlide'
-import AanbodSlide from '@/components/slides/AanbodSlide'
+import KostenBesparingSlide from '@/components/slides/KostenBesparingSlide'
+import InvesteringSlide from '@/components/slides/InvesteringSlide'
 
 const SLIDES: SlideItem[] = [
   { id: 1, label: 'Introductie', sublabel: 'VIESA Automations' },
@@ -26,7 +27,8 @@ const SLIDES: SlideItem[] = [
   { id: 6, label: 'Winst & ROI', sublabel: 'Wat levert het op' },
   { id: 7, label: 'Afhankelijkheden', sublabel: 'Wat we nodig hebben' },
   { id: 8, label: 'Roadmap', sublabel: 'Planning per fase' },
-  { id: 9, label: 'Ons Aanbod', sublabel: 'Investering & onderhoud' },
+  { id: 9, label: 'Kosten besparing', sublabel: 'Business Case & ROI' },
+  { id: 10, label: 'Het Aanbod', sublabel: 'Investering & ROI' },
 ]
 
 const SLIDE_COMPONENTS = [
@@ -38,7 +40,8 @@ const SLIDE_COMPONENTS = [
   <WinstSlide key={5} />,
   <AfhankelijkhedenSlide key={6} />,
   <RoadmapSlide key={7} />,
-  <AanbodSlide key={8} />,
+  <KostenBesparingSlide key={8} />,
+  <InvesteringSlide key={9} />,
 ]
 
 export default function PresentationPage() {

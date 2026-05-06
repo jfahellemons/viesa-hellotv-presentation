@@ -49,7 +49,7 @@ const people = [
 
 export default function AboutSlide() {
   return (
-    <div className="flex flex-col h-full px-8 py-10 gap-8 max-w-6xl mx-auto w-full">
+    <div className="flex flex-col h-full px-8 py-12 gap-10 max-w-7xl mx-auto w-full">
       {/* Header */}
       <div className="flex flex-col gap-2">
         <div className="flex items-center gap-2 text-primary/80">
@@ -68,26 +68,26 @@ export default function AboutSlide() {
         {people.map((person) => (
           <div key={person.name} className="flex flex-col gap-6">
             <div className="flex flex-col gap-1 border-l-4 border-viesa-teal pl-4">
-              <h3 className="text-2xl font-bold text-foreground">{person.name}</h3>
-              <p className="text-viesa-teal font-medium">{person.role}</p>
+              <h3 className="text-3xl font-bold text-foreground">{person.name}</h3>
+              <p className="text-viesa-teal font-semibold text-lg">{person.role}</p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {person.cards.map((card, i) => (
                 <div
                   key={i}
-                  className="bg-card rounded-xl border border-border p-5 flex flex-col gap-4 shadow-sm hover:shadow-md transition-all group"
+                  className="bg-card rounded-xl border border-border p-6 flex flex-col gap-4 shadow-sm hover:shadow-md transition-all group"
                 >
-                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-                    <card.icon size={20} />
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                    <card.icon size={24} />
                   </div>
                   <div className="flex flex-col gap-2">
-                    <h4 className="font-bold text-sm text-foreground">{card.title}</h4>
+                    <h4 className="font-bold text-base text-foreground">{card.title}</h4>
                     <ul className="flex flex-col gap-2">
                       {card.points.map((point, j) => (
                         <li key={j} className="flex gap-2 items-start">
-                          <CheckCircle2 className="text-viesa-teal shrink-0 mt-1" size={14} />
-                          <span className="text-foreground/80 text-xs leading-relaxed">
+                          <CheckCircle2 className="text-viesa-teal shrink-0 mt-1" size={16} />
+                          <span className="text-foreground/80 text-sm leading-relaxed">
                             {point}
                           </span>
                         </li>
